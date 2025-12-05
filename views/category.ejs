@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= category %> - TravelSite</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <%- include("partials/navbar", { username: username, query: "" }) %>
+
+    <h2><%= category %> Destinations</h2>
+
+    <% if (!destinations || destinations.length === 0) { %>
+      <p>No destinations found in this category.</p>
+    <% } else { %>
+      <ul>
+        <% destinations.forEach(function (dest) { %>
+          <li>
+            <a href="/destinations/<%= dest.id %>"><%= dest.name %></a>
+          </li>
+        <% }); %>
+      </ul>
+    <% } %>
+
+    <p><a href="/home">Back to Home</a></p>
+  </body>
+</html>

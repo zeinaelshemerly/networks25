@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Search - TravelSite</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <%- include("partials/navbar", { username: username, query: query }) %>
+
+    <h2>Search Results</h2>
+
+    <% if (!query || query.length === 0) { %>
+      <p>Please enter a destination name to search.</p>
+    <% } else if (results.length === 0) { %>
+      <p>Destination not Found.</p>
+    <% } else { %>
+      <ul>
+        <% results.forEach(function (dest) { %>
+          <li>
+            <a href="/destinations/<%= dest.id %>"><%= dest.name %></a>
+          </li>
+        <% }); %>
+      </ul>
+    <% } %>
+
+    <p><a href="/home">Back to Home</a></p>
+  </body>
+</html>

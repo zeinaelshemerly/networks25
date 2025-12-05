@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home - TravelSite</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <%- include("partials/navbar", { username: username, query: "" }) %>
+
+    <h2>Welcome, <%= username %>!</h2>
+
+    <h3>Destination Categories</h3>
+    <ul>
+      <li><a href="/categories/Beaches">Beaches</a></li>
+      <li><a href="/categories/Mountains">Mountains</a></li>
+      <li><a href="/categories/Cities">Cities</a></li>
+      <li><a href="/categories/Nature">Nature</a></li>
+    </ul>
+
+    <p><a href="/wantlist">View My Want-to-Go List</a></p>
+  </body>
+</html>
