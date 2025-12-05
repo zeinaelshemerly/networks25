@@ -1,0 +1,23 @@
+<div>
+  <a href="/home">TravelSite</a>
+
+  <form action="/search" method="GET" style="display:inline-block; margin-left: 16px;">
+    <input
+      type="text"
+      name="q"
+      placeholder="Search destinations..."
+      value="<%= typeof query !== 'undefined' ? query : '' %>"
+    />
+    <button type="submit">Search</button>
+  </form>
+
+  <% if (typeof username !== "undefined" && username) { %>
+    <ul style="display:inline-block; margin-left: 16px;">
+      <li style="display:inline; list-style:none;">Logged in as <%= username %></li>
+      <li style="display:inline; list-style:none; margin-left: 8px;">
+        <a href="/logout">Logout</a>
+      </li>
+    </ul>
+  <% } %>
+</div>
+<hr />
